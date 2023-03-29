@@ -14,4 +14,4 @@ export const messageSlice = createSlice({
 })
 
 export const {addNewPost} = messageSlice.actions
-export const messageReducer = messageSlice.reducer
+export const {messageReducer} = messageSlice.reducer
