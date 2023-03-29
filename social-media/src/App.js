@@ -6,6 +6,7 @@ import DashboardPage from './Components/Dashboard';
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
+//$1stJake19899 database password
 
 window.React1 = require('react');
 

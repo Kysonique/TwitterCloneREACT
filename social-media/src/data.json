@@ -1,0 +1,18 @@
+{
+    "posts":{
+        "p1":{
+            "id":"1",
+            "message":"hello world!"
+        }
+    },
+    "users":{
+        "u1":{
+            "id":"1",
+            "firstName":"user1",
+            "lastName":"user Lastname",
+            "phoneNumber":"1234567",
+            "displayName":"uniqueUser"
+
+        }
+    }
+}
