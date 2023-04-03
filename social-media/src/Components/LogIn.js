@@ -16,10 +16,14 @@ export default function LogInPage(){
     const saveUserInfo = (() => {
         setUserInfo((prevState) => ({...prevState, displayName: inputValue}))
         console.log(UserInfo)
+        validateUser();
     })
-  
+    const validateUser = (() => {
+        fetch('https://react-socail-media-e8676-default-rtdb.firebaseio.com/users')
+            .then((response) => response.json())
+            .then((data) => console.log("validated" + data))
+    })
 
-    // setUserInfo({displayName: e.target.value})
     return(
         <>
         <h1>LogInPage woks!</h1>

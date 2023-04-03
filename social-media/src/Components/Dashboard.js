@@ -38,26 +38,6 @@ export default function DashboardPage(){
     })
 
 
-    // useEffect(() => {
-    //     fetch('https://react-socail-media-e8676-default-rtdb.firebaseio.com/posts.json', {
-    //         method: 'POST',
-    //         body: JSON.stringify({
-    //             id: ID,
-    //             message: sendMessage
-
-    //         }),
-    //         headers:{
-    //             'content-type':'aplication/json; charset=UTF-8'
-    //         },
-    //     })
-    //         .then((response) => response.json())
-    //         .then((data) => {
-    //             console.log(data)
-    //         })
-    //         .catch((err) => {
-    //             console.log(err.message);
-    //         })
-    // }, [])
 
 
  

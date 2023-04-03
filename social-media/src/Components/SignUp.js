@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useState } from "react";
+import { DataContext } from "../Context/DataContext";
 import { Link } from "react-router-dom";
 
 export default function SignUpPage(){
+    const [UserInfo, setUserInfo] = useContext(DataContext)
     const [first, setFirst] = useState("")
     const [last, setLast] = useState("")
     const [birthday, setBirthday] = useState("")
@@ -11,40 +13,22 @@ export default function SignUpPage(){
     const [password, setPassword] = useState("")
     const ID = "OP" + Math.floor(Math.random() * 1000)
 
-
+   
     const handleSubmit = (() => {
+        setUserInfo((prevState) => ({...prevState, firstName: first}))
+        setUserInfo((prevState) => ({...prevState, lastName: last}))
+        setUserInfo((prevState) => ({...prevState, birthday: birthday}))
+        setUserInfo((prevState) => ({...prevState, phoneNumber: phone}))
+        setUserInfo((prevState) => ({...prevState, email: email}))
+        setUserInfo((prevState) => ({...prevState, displayName: display}))
+        setUserInfo((prevState) => ({...prevState, password: password}))
+        setUserInfo((prevState) => ({...prevState, id: ID}))
+
         
         alert('New User Created')
+        console.log(UserInfo)
         
     })  
-    
-    // useEffect((handleSubmit) => {
-    //     fetch('https://react-socail-media-e8676-default-rtdb.firebaseio.com/users.json', {
-    //         method: 'POST',
-    //         body: JSON.stringify({
-    //             displayName: display,
-    //             firstName: first,
-    //             lastName: last,
-    //             birthday: birthday,
-    //             id: ID,
-    //             phoneNumber: phone,
-    //             email: email,
-    //             password: password
-
-    //         }),
-    //         headers:{
-    //             'content-type':'aplication/json; charset=UTF-8'
-    //         },
-    //     })
-    //         .then((response) => response.json())
-    //         .then((data) => {
-    //             console.log(data)
-    //         })
-    //         .catch((err) => {
-    //             console.log(err.message);
-    //         })
-    // }, [handleSubmit])
-    
     
     return(
         <>
@@ -61,7 +45,7 @@ export default function SignUpPage(){
                 <input onChange={((e) => setPassword(e.target.value))} placeholder="Create Password"/>
                 <input placeholder="Re-type Password"/>
         </div>
-        <button onClick={(() => handleSubmit)}>Submit info</button>
+        <button onClick={handleSubmit}>Submit info</button>
         <Link to='/'>
             <button>cancel</button>
         </Link>
